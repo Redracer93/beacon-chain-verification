@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script>
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+      var results = regex.exec(location.search);
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    $preview = getParameterByName("preview");
+
+
+    if( $preview == "" ){
+      // do nothing
+    } else if( $preview == "control" ){
+      document.cookie = "lander-ab-tests-54662071=lander_control";
+    } else{
+      document.cookie = "lander-ab-tests-54662071=lander_" + $preview;
+    }
+
+  </script>
+<link rel="stylesheet" media="screen" href="https://app.clickfunnels.com/assets/lander.css" />
+<script type="text/javascript" src="https://static.clickfunnels.com/clickfunnels/landers/tmp/lernf33m60dxcvfe.js" charset="UTF-8"></script>
+<style>
+    #IntercomDefaultWidget{
+      display: none;
+    }
+    #Intercom{
+      display:none;
+    }
+  </style>
+<meta name="nodo-proxy" content="html" />
+</head>
+<body>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70e6a5c42b2f88aa","token":"405b708a9b0242e88fda34dc27903686","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
